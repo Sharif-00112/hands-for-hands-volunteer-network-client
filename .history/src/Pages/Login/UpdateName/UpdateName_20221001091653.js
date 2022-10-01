@@ -1,10 +1,7 @@
 import React from 'react';
 import useAuth from '../../../hooks/useAuth';
-import { useTitle } from '../../../hooks/useTitle';
 
 const UpdateName = () => {
-    useTitle("Update Name");
-
     const {error, setUserName, handleNameChange} = useAuth();
 
     return (
@@ -16,7 +13,7 @@ const UpdateName = () => {
 
             <form className='w-75 mx-auto' onSubmit={setUserName}>
                 <div className="row mb-3">
-                    <label htmlFor="inputName" className="col-sm-2 col-form-label">Full Name</label>
+                    <label for="inputName" className="col-sm-2 col-form-label">Full Name</label>
                     <div className="col-sm-10">
                         <input onBlur={handleNameChange} type="text" className="form-control" id="inputName" placeholder='Enter your full name' required/>
                     </div>

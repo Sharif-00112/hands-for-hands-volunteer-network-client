@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import { useTitle } from '../../../hooks/useTitle';
+// import useAuth from '../../../hooks/useAuth';
 
 const Register = () => {
     const { error, handleRegisterSubmitBtn, handleEmailChange, handlePasswordChange } = useAuth();
@@ -52,6 +53,7 @@ const Register = () => {
                 </form>
 
             <br />
+            {/* <button className='btn btn-success p-2 m-3'><Link className='text-decoration-none text-white' to="/login"><u>Already registered? Click to Login!</u></Link></button> */}
 
             <Link className='text-decoration-none text-white m-2' to="/login"><u><button className='btn btn-secondary p-2 m-3'>Already registered? Click to Login!</button></u></Link>
 

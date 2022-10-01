@@ -1,10 +1,7 @@
 import React from 'react';
 import useAuth from '../../../hooks/useAuth';
-import { useTitle } from '../../../hooks/useTitle';
 
 const ForgotPassword = () => {
-    useTitle("Password Recovery");
-
     const { error, handleEmailChange, handleForgotPassword } = useAuth();
 
     return (
@@ -14,7 +11,7 @@ const ForgotPassword = () => {
 
             <form className='w-75 mx-auto' onSubmit={handleForgotPassword}>
                 <div className="row mb-3">
-                    <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Email</label>
+                    <label for="inputEmail3" className="col-sm-2 col-form-label">Email</label>
                     <div className="col-sm-10">
                         <input onBlur={handleEmailChange}  type="email" className="form-control" id="inputEmail3" placeholder='Enter your email' required/>
                     </div>

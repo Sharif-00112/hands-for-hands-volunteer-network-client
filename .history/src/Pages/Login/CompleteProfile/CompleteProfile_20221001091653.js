@@ -1,12 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-import { useTitle } from '../../../hooks/useTitle';
 
 
 const CompleteProfile = () => {
-    useTitle("Complete Profile");
-
     const {error, verifyEmail} = useAuth();
 
     return (

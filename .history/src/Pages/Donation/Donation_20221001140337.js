@@ -1,14 +1,14 @@
 import React from 'react';
 import { useTitle } from '../../hooks/useTitle';
 
-const Contact = () => {
-    useTitle("Contact");
+const Donation = () => {
+    useTitle("Home");
 
     return (
         <div>
-            <h2>Contact Page</h2>
+            <h2>Donation</h2>
         </div>
     );
 };
 
-export default Contact;
+export default Donation;

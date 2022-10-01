@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import { useTitle } from '../../../hooks/useTitle';
+// import useAuth from '../../../hooks/useAuth';
 
 const Register = () => {
     const { error, handleRegisterSubmitBtn, handleEmailChange, handlePasswordChange } = useAuth();
@@ -15,20 +16,20 @@ const Register = () => {
 
             <form className='w-75 mx-auto' onSubmit={handleRegisterSubmitBtn}>
                 <div className="row mb-3">
-                    <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Email</label>
+                    <label for="inputEmail3" className="col-sm-2 col-form-label">Email</label>
                     <div className="col-sm-10">
                     <input onBlur={handleEmailChange} type="email" className="form-control" id="inputEmail3" placeholder='Enter a valid email' required/>
                     </div>
                 </div>
                 <div className="row mb-3">
-                    <label htmlFor="inputPassword3" className="col-sm-2 col-form-label">Password</label>
+                    <label for="inputPassword3" className="col-sm-2 col-form-label">Password</label>
                     <div className="col-sm-10">
                     <input onBlur={handlePasswordChange} type="password" className="form-control" id="inputPassword3" placeholder='Choose a strong password' required/>
                     </div>
                 </div>
                 {/* ignoring for now  */}
                 <div className="row mb-3">
-                    <label htmlFor="inputPassword3" className="col-sm-2 col-form-label">Confirm Password</label>
+                    <label for="inputPassword3" className="col-sm-2 col-form-label">Confirm Password</label>
                     <div className="col-sm-10">
                     <input type="password" className="form-control" id="inputPassword3" placeholder='Re-type password to confirm' required/>
                     <br />
@@ -52,6 +53,7 @@ const Register = () => {
                 </form>
 
             <br />
+            {/* <button className='btn btn-success p-2 m-3'><Link className='text-decoration-none text-white' to="/login"><u>Already registered? Click to Login!</u></Link></button> */}
 
             <Link className='text-decoration-none text-white m-2' to="/login"><u><button className='btn btn-secondary p-2 m-3'>Already registered? Click to Login!</button></u></Link>
 
