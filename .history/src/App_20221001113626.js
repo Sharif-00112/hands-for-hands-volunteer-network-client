@@ -12,13 +12,6 @@ import CompleteProfile from './Pages/Login/CompleteProfile/CompleteProfile';
 import ChangePassword from './Pages/Login/ChangePassword/ChangePassword';
 import UpdateName from './Pages/Login/UpdateName/UpdateName';
 import Home from './Pages/Home/Home/Home';
-import About from './Pages/About/About/About';
-import Contact from './Pages/Contact/Contact';
-import NotFound from './Pages/NotFound/NotFound';
-import Donation from './Pages/Donation/Donation';
-import MyEvents from './Pages/MyEvents/MyEvents';
-import Blogs from './Pages/Blogs/Blogs/Blogs';
-import Admin from './Pages/Admin/Admin/Admin';
 
 function App() {
   return (
@@ -29,15 +22,11 @@ function App() {
           <Routes>
             <Route exact path = '/' element = {<Home></Home>}> </Route>
             <Route exact path = '/home' element = {<Home></Home>}> </Route>
-            <Route exact path = '/donation' element = {<Donation></Donation>}> </Route>
-            <Route exact path = '/myEvents' element = {<MyEvents></MyEvents>}> </Route>
-            <Route exact path = '/blogs' element = {<Blogs></Blogs>}> </Route>
-            <Route exact path = '/about' element = {<About></About>}> </Route>
+            {/* <Route exact path = '/about' element = {<About></About>}> </Route> */}
             {/* <Route exact path = '/addService' element = {<AddService></AddService>}> </Route> */}
             {/* <Route exact path = '/manageServices' element = {<ManageServices></ManageServices>}> </Route> */}
-            <Route exact path = '/contact' element = {<Contact></Contact>}> </Route>
+            {/* <Route exact path = '/contact' element = {<Contact></Contact>}> </Route> */}
             <Route exact path = '/login' element = {<Login></Login>}> </Route>
-            <Route exact path = '/admin' element = {<Admin></Admin>}> </Route>
             <Route exact path = '/register' element = {<Register></Register>}> </Route>
             <Route exact path = '/forgotpassword' element = {<ForgotPassword></ForgotPassword>}> </Route>
 
@@ -65,7 +54,7 @@ function App() {
               </PrivateRoute>
             }> </Route>
 
-            <Route exact path = '*' element = {<NotFound></NotFound>}> </Route>
+            {/* <Route exact path = '*' element = {<NotFound></NotFound>}> </Route> */}
           </Routes>
           <Footer></Footer>
         </Router>

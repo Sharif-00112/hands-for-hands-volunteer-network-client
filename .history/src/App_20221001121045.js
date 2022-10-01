@@ -18,7 +18,6 @@ import NotFound from './Pages/NotFound/NotFound';
 import Donation from './Pages/Donation/Donation';
 import MyEvents from './Pages/MyEvents/MyEvents';
 import Blogs from './Pages/Blogs/Blogs/Blogs';
-import Admin from './Pages/Admin/Admin/Admin';
 
 function App() {
   return (
@@ -37,7 +36,6 @@ function App() {
             {/* <Route exact path = '/manageServices' element = {<ManageServices></ManageServices>}> </Route> */}
             <Route exact path = '/contact' element = {<Contact></Contact>}> </Route>
             <Route exact path = '/login' element = {<Login></Login>}> </Route>
-            <Route exact path = '/admin' element = {<Admin></Admin>}> </Route>
             <Route exact path = '/register' element = {<Register></Register>}> </Route>
             <Route exact path = '/forgotpassword' element = {<ForgotPassword></ForgotPassword>}> </Route>
 

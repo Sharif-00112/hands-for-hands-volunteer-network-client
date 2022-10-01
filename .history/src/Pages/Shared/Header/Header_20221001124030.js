@@ -9,14 +9,14 @@ const Header = () => {
     const {user, logout} = useAuth();
     return (
         <>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="light" sticky='top' className='bg-opacity-25'>
+            <Navbar collapseOnSelect expand="lg" bg="secondary" variant="dark" sticky='top'>
                 <Container>
                     <Navbar.Brand href="/">
                         <img src={logo} height="30" alt="" />
                         {/* Hands For Hands */}
                     </Navbar.Brand>
                     <Navbar.Toggle />
-                    <Navbar.Collapse className="justify-content-end ">
+                    <Navbar.Collapse className="justify-content-end">
                         <Nav.Link as={Link} to="/home" className='mx-3'>Home</Nav.Link>
                         <Nav.Link as={Link} to="/donation" className='mx-3'>Donation</Nav.Link>
                         <Nav.Link as={Link} to="/myEvents" className='mx-3'>My Events</Nav.Link>

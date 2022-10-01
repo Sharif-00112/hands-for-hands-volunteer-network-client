@@ -4,19 +4,20 @@ import logo from '../../../images/logos/Group 1329.png'
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import useAuth from '../../../hooks/useAuth';
+import { NavLink } from 'react-router-dom';
  
 const Header = () => {
     const {user, logout} = useAuth();
     return (
         <>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="light" sticky='top' className='bg-opacity-25'>
+            <Navbar collapseOnSelect expand="lg" bg="secondary" variant="dark" sticky='top'>
                 <Container>
                     <Navbar.Brand href="/">
                         <img src={logo} height="30" alt="" />
                         {/* Hands For Hands */}
                     </Navbar.Brand>
                     <Navbar.Toggle />
-                    <Navbar.Collapse className="justify-content-end ">
+                    <Navbar.Collapse className="justify-content-end">
                         <Nav.Link as={Link} to="/home" className='mx-3'>Home</Nav.Link>
                         <Nav.Link as={Link} to="/donation" className='mx-3'>Donation</Nav.Link>
                         <Nav.Link as={Link} to="/myEvents" className='mx-3'>My Events</Nav.Link>
@@ -32,8 +33,16 @@ const Header = () => {
                             </div>
                             :
                             <div className="">
-                                <Nav.Link as={Link} to="/login" className='mx-1 d-inline'><Button variant='dark'>Login</Button></Nav.Link>
-                                <Nav.Link as={Link} to="/admin" className='mx-1 d-inline'><Button variant='dark'>Admin</Button></Nav.Link>
+                                <Nav.Link as={Link} to="/login" className='mx-3'><Button variant='light'>Login</Button></Nav.Link>
+                                <Nav.Link as={Link} to="/admin" className='mx-3'><Button variant='light'>Admin</Button></Nav.Link>
+
+                                <NavLink
+                                    to="users"
+                                    style={({ isActive }) => ({
+                                    color: isActive ? '#fff' : '#545e6f',
+                                    background: isActive ? '#7600dc' : '#f0f0f0',
+                                    })}
+                                ></NavLink>
                             </div>
                         }
                     </Navbar.Collapse>
