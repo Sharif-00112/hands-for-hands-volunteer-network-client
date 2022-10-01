@@ -1,10 +1,10 @@
 import { useState } from "react";
 import initializeAuthentication from "../Pages/Login/Firebase/firebase.initialize";
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut, FacebookAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, updatePassword, sendEmailVerification, updateProfile, } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut, GithubAuthProvider, FacebookAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, updatePassword, sendEmailVerification, updateProfile, } from "firebase/auth";
 import { useEffect } from "react";
 
 initializeAuthentication(); 
-  
+ 
 const useFirebase = () =>{
     const [user, setUser] = useState({});
     const [error, setError] = useState('');
@@ -14,6 +14,7 @@ const useFirebase = () =>{
     const [isLoading, setIsLoading] = useState(true);
 
     const googleProvider = new GoogleAuthProvider();
+    const gitProvider = new GithubAuthProvider();
     const facebookProvider = new FacebookAuthProvider();
     const auth = getAuth();
  
@@ -21,6 +22,10 @@ const useFirebase = () =>{
       setIsLoading(true);
       signInWithPopup(auth, googleProvider)
       .then((result) => {
+          // This gives you a Google Access Token. You can use it to access the Google API.
+          // const credential = GoogleAuthProvider.credentialFromResult(result);
+          // const token = credential.accessToken;
+          // The signed-in user info.
           setUser(result.user);
       }).catch((error) => {
           // Handle Errors here.
@@ -34,6 +39,26 @@ const useFirebase = () =>{
         setIsLoading(false);
       });
     }
+
+    const signInUsingGithub = () =>{
+      signInWithPopup(auth, gitProvider)
+      .then((result) => {
+        // This gives you a GitHub Access Token. You can use it to access the GitHub API.
+        // const credential = GithubAuthProvider.credentialFromResult(result);
+        // const token = credential.accessToken;
+
+        // The signed-in user info.
+        setUser(result.user);
+      }).catch((error) => {
+        // Handle Errors here.
+        setError(error.code);
+        setError(error.message);
+        // The email of the user's account used.
+        setError(error.customData.email);
+        // The AuthCredential type that was used.
+        setError(GithubAuthProvider.credentialFromError(error));
+      });
+    };
 
     const signInUsingFacebook = () =>{
       signInWithPopup(auth, facebookProvider)
@@ -54,6 +79,11 @@ const useFirebase = () =>{
         // The AuthCredential type that was used.
         setError(FacebookAuthProvider.credentialFromError(error));
       });
+    };
+
+    const signInUsingTwitter = () =>{
+      console.log('Twitter login coming soon...');
+      alert('Twitter Login will be added later...');
     };
 
     const customLogin = (email, password) =>{
@@ -199,7 +229,9 @@ const useFirebase = () =>{
 
     return {
       signInUsingGoogle, 
+      signInUsingGithub, 
       signInUsingFacebook,
+      signInUsingTwitter, 
       customLogin, 
       customRegister,
       handleLoginSubmitBtn,
