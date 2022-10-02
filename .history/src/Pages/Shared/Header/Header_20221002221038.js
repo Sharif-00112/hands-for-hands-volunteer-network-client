@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import logo from '../../../images/logos/Group 1329.png'
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
@@ -28,8 +28,7 @@ const Header = () => {
                                 <Navbar.Text className='mx-4'>
                                     <Nav.Link as={Link} to="/login" className='d-inline text-info'>Signed in as: {user?.displayName}</Nav.Link>
                                 </Navbar.Text>
-                                <Nav.Link as={Link} to="/login" className='mx-1'><button className='btn btn-outline-warning btn-sm fw-bold' onClick={logout}>Logout</button></Nav.Link>
-
+                                <Button onClick={logout} variant='light'>Logout</Button> 
                             </div>
                             :
                             <div className="">
