@@ -13,7 +13,7 @@ const Login = () => {
     return (
         <div>
             <img className='w-25 mx-auto my-3' src={logo} alt="" />
-            { !user.email ? <h3 className='pt-4'>User Login</h3> 
+            { !user.email ? <h3 className='pt-3'>User Login</h3> 
             :
             <div className="">
                 <h3 className='pt-5'>Welcome, <span className='text-success'>{user.displayName}</span></h3>

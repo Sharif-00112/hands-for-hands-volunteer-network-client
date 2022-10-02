@@ -8,7 +8,7 @@ const Admin = () => {
 
     return (
         <div>
-            <img className='w-25 mx-auto my-3' src={logo} alt="" />
+            <img className='w-25 mx-auto mt-3' src={logo} alt="" />
             <h2>Admin Page</h2>
         </div>
     );

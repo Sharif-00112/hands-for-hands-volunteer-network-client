@@ -17,7 +17,7 @@ const Header = () => {
                     </Navbar.Brand>
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end ">
-                        <Nav.Link as={HashLink} to="/home#home" className='mx-3'>Home</Nav.Link>
+                        <Nav.Link as={Link} to="/home" className='mx-3'>Home</Nav.Link>
                         <Nav.Link as={Link} to="/donation" className='mx-3'>Donation</Nav.Link>
                         <Nav.Link as={Link} to="/myEvents" className='mx-3'>My Events</Nav.Link>
                         <Nav.Link as={Link} to="/blogs" className='mx-3'>Blogs</Nav.Link>
@@ -32,8 +32,8 @@ const Header = () => {
                             </div>
                             :
                             <div className="">
-                                <Nav.Link as={Link} to="/login" className='mx-1 d-inline'><button className='btn btn-outline-warning btn-sm'>Login</button></Nav.Link>
-                                <Nav.Link as={Link} to="/admin" className='mx-1 d-inline'><button className='btn btn-outline-light btn-sm'>Admin</button></Nav.Link>
+                                <Nav.Link as={Link} to="/login" className='mx-1 d-inline'><button className='btn btn-outline-primary btn-sm'>Login</button></Nav.Link>
+                                <Nav.Link as={Link} to="/admin" className='mx-1 d-inline'><button className='btn btn-outline-warning btn-sm'>Admin</button></Nav.Link>
                             </div>
                         }
                     </Navbar.Collapse>
