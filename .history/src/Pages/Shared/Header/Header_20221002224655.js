@@ -4,7 +4,7 @@ import logo from '../../../images/logos/Group 1329.png'
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import useAuth from '../../../hooks/useAuth';
-  
+ 
 const Header = () => {
     const {user, logout} = useAuth();
     return (

@@ -8,19 +8,11 @@ const SingleEvent = (props) => {
     const { user } = useAuth();
 
     const handleInterestedBtn = () =>{
-        //add (POST) the event to a new cluster interested_events_DB storing user email and event id
-        const userEmail = user.email;
-        const eventId = _id;
-        const interestedEventData = {userEmail, eventId};
-
+        //add the event to a new cluster interested_events_DB storing user email and event id
     }
 
     const handleJoinBtn = () =>{
-        //add (POST) the event to a new cluster joined_events_DB storing user email and event id
-        const userEmail = user.email;
-        const eventId = _id;
-        const joinedEventData = {userEmail, eventId};
-
+        //add the event to a new cluster joined_events_DB storing user email and event id
     }
 
     return (

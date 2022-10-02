@@ -30,6 +30,7 @@ function App() {
             <Route exact path = '/' element = {<Home></Home>}> </Route>
             <Route exact path = '/home' element = {<Home></Home>}> </Route>
             <Route exact path = '/donation' element = {<Donation></Donation>}> </Route>
+            {/* <Route exact path = '/dashboard' element = {<Dashboard></Dashboard>}> </Route> */}
             <Route exact path = '/blogs' element = {<Blogs></Blogs>}> </Route>
             <Route exact path = '/about' element = {<About></About>}> </Route>
             {/* <Route exact path = '/addService' element = {<AddService></AddService>}> </Route> */}
@@ -38,7 +39,7 @@ function App() {
             <Route exact path = '/login' element = {<Login></Login>}> </Route>
             <Route exact path = '/admin' element = {<Admin></Admin>}> </Route>
             <Route exact path = '/register' element = {<Register></Register>}> </Route>
-            <Route exact path = '/forgotPassword' element = {<ForgotPassword></ForgotPassword>}> </Route>
+            <Route exact path = '/forgotpassword' element = {<ForgotPassword></ForgotPassword>}> </Route>
 
             {/* <Route exact path = '/booking/:serviceId' element = {
               <PrivateRoute>
@@ -46,7 +47,7 @@ function App() {
               </PrivateRoute>
             }> </Route> */}
 
-            <Route exact path = '/completeProfile' element = {
+            <Route exact path = '/completeprofile' element = {
               <PrivateRoute>
                 <CompleteProfile></CompleteProfile>
               </PrivateRoute>
@@ -58,13 +59,13 @@ function App() {
               </PrivateRoute>
             }> </Route>
 
-            <Route exact path = '/changePassword' element = {
+            <Route exact path = '/changepassword' element = {
               <PrivateRoute>
                 <ChangePassword></ChangePassword>
               </PrivateRoute>
             }> </Route>
 
-            <Route exact path = '/updateName' element = {
+            <Route exact path = '/updatename' element = {
               <PrivateRoute>
                 <UpdateName></UpdateName>
               </PrivateRoute>

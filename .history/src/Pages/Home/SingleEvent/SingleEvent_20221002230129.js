@@ -1,25 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useAuth from '../../../hooks/useAuth';
 
 const SingleEvent = (props) => {
     // console.log(props.singleEvent);
     const {eventTitle, description, eventDate, eventImage, _id} = props.singleEvent;
-    const { user } = useAuth();
 
     const handleInterestedBtn = () =>{
-        //add (POST) the event to a new cluster interested_events_DB storing user email and event id
-        const userEmail = user.email;
-        const eventId = _id;
-        const interestedEventData = {userEmail, eventId};
-
+        
     }
 
     const handleJoinBtn = () =>{
-        //add (POST) the event to a new cluster joined_events_DB storing user email and event id
-        const userEmail = user.email;
-        const eventId = _id;
-        const joinedEventData = {userEmail, eventId};
 
     }
 
