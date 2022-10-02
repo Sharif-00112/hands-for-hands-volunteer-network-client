@@ -4,6 +4,7 @@ import About from '../../About/About/About';
 import Contact from '../../Contact/Contact';
 import AllEvents from '../AllEvents/AllEvents';
 import Banner from '../Banner/Banner';
+import Events from '../Events/Events';
 
 const Home = () => {
     useTitle("Home");

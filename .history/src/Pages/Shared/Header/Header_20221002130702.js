@@ -33,7 +33,7 @@ const Header = () => {
                             :
                             <div className="">
                                 <Nav.Link as={Link} to="/login" className='mx-1 d-inline'><button className='btn btn-outline-light btn-sm'>Login</button></Nav.Link>
-                                <Nav.Link as={Link} to="/admin" className='mx-1 d-inline'><button className='btn btn-outline-light btn-sm'>Admin</button></Nav.Link>
+                                <Nav.Link as={Link} to="/admin" className='mx-1 d-inline'><button className='btn btn-outline-dark btn-sm'>Admin</button></Nav.Link>
                             </div>
                         }
                     </Navbar.Collapse>

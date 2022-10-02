@@ -9,7 +9,7 @@ const Header = () => {
     const {user, logout} = useAuth();
     return (
         <>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="light" sticky='top' className='bg-opacity-50 text-white'>
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="light" sticky='top' className='bg-opacity-50'>
                 <Container>
                     <Navbar.Brand href="/">
                         <img src={logo} height="30" alt="" />
@@ -32,8 +32,8 @@ const Header = () => {
                             </div>
                             :
                             <div className="">
-                                <Nav.Link as={Link} to="/login" className='mx-1 d-inline'><button className='btn btn-outline-light btn-sm'>Login</button></Nav.Link>
-                                <Nav.Link as={Link} to="/admin" className='mx-1 d-inline'><button className='btn btn-outline-light btn-sm'>Admin</button></Nav.Link>
+                                <Nav.Link as={Link} to="/login" className='mx-1 d-inline'><Button variant='dark'>Login</Button></Nav.Link>
+                                <Nav.Link as={Link} to="/admin" className='mx-1 d-inline'><Button variant='dark'>Admin</Button></Nav.Link>
                             </div>
                         }
                     </Navbar.Collapse>

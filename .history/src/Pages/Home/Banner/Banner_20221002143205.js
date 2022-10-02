@@ -13,9 +13,9 @@ const Banner = () => {
         <div>
             <div className="position-relative">
                 <img className='img-fluid mx-3' src={cover} alt="CoverPhoto" />
-                <div className="text-center text-white bg-success bg-opacity-75 m-3 p-2 position-absolute top-50 start-50 translate-middle">
-                    <h1 className='px-5'>HANDS FOR HANDS</h1>
-                    <h3 className='px-5'>---Volunteer Network---</h3>
+                <div className="content text-center bg-secondary bg-opacity-50 m-3 p-2 position-absolute top-50 start-50 translate-middle">
+                    <h1>HANDS FOR HANDS</h1>
+                    <h3>---Volunteer Network---</h3>
                 </div>
             </div>
 

@@ -1,23 +1,22 @@
-// import React, { useState } from 'react';
-// import { Carousel } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Carousel } from 'react-bootstrap';
 import cover from '../../../images/logos/cover.jpg'
 
 const Banner = () => {
-    // const [index, setIndex] = useState(0);
+    const [index, setIndex] = useState(0);
 
-    // const handleSelect = (selectedIndex, e) => {
-    //   setIndex(selectedIndex);
-    // };
+    const handleSelect = (selectedIndex, e) => {
+      setIndex(selectedIndex);
+    };
 
     return (
         <div>
-            <div className="position-relative">
-                <img className='img-fluid mx-3' src={cover} alt="CoverPhoto" />
-                <div className="text-center text-white bg-success bg-opacity-75 m-3 p-2 position-absolute top-50 start-50 translate-middle">
-                    <h1 className='px-5'>HANDS FOR HANDS</h1>
-                    <h3 className='px-5'>---Volunteer Network---</h3>
-                </div>
+            <img className='img-fluid m-3' src={cover} alt="CoverPhoto" />
+            <div class="content text-center">
+                <h1>Bengal Group <br/> of Industries</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In culpa ea repudiandae neque autem ducimus laudantium eum ab provident at?</p>
             </div>
+
 
             {/* <Carousel activeIndex={index} onSelect={handleSelect}>
                 <Carousel.Item>
