@@ -20,7 +20,7 @@ const InterestedEvent = (props) => {
             setInterestedEventDetails(filteredEvents[0]);
         });
     }, [eventId])
-    // console.log(interestedEventDetails);
+    console.log(interestedEventDetails);
 
     const handleRemoveBtn = () =>{
         const proceed = window.confirm('Are you sure you want to remove this event?');

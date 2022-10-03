@@ -21,24 +21,7 @@ const JoinedEvent = (props) => {
     // console.log(joinedEventDetails);
 
     const handleLeaveBtn = () => {
-        const proceed = window.confirm('Are you sure you want to leave this event?');
-        if(proceed){
-            const url = `http://localhost:3001/joinedEvents/${id}`;
-            fetch(url, {
-                method: 'DELETE'
-            })
-            .then(res => res.json())
-            .then(data => {
-                if(data.deletedCount > 0){
-                    alert('You have left the event!')
-                    window.location.reload();
 
-                    // update the UI (needs to debug. currently i am using reload())
-                    // const remainingEvents = interestedEventDetails.filter(intsEvent => interestedEventDetails._id !== id);
-                    // setInterestedEventDetails(remainingEvents);
-                }
-            })
-        }
     }
 
     return ( 

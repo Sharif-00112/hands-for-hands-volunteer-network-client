@@ -20,7 +20,7 @@ const InterestedEvent = (props) => {
             setInterestedEventDetails(filteredEvents[0]);
         });
     }, [eventId])
-    // console.log(interestedEventDetails);
+    console.log(interestedEventDetails);
 
     const handleRemoveBtn = () =>{
         const proceed = window.confirm('Are you sure you want to remove this event?');
@@ -66,7 +66,7 @@ const InterestedEvent = (props) => {
             .then(res => res.json())
             .then(data => {
                 if(data.deletedCount > 0){
-                    // alert('Removed Successfully!')
+                    alert('Removed Successfully!')
                     window.location.reload();
 
                     // update the UI (needs to debug. currently i am using reload())

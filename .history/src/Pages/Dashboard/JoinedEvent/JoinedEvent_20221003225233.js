@@ -21,24 +21,7 @@ const JoinedEvent = (props) => {
     // console.log(joinedEventDetails);
 
     const handleLeaveBtn = () => {
-        const proceed = window.confirm('Are you sure you want to leave this event?');
-        if(proceed){
-            const url = `http://localhost:3001/joinedEvents/${id}`;
-            fetch(url, {
-                method: 'DELETE'
-            })
-            .then(res => res.json())
-            .then(data => {
-                if(data.deletedCount > 0){
-                    alert('You have left the event!')
-                    window.location.reload();
 
-                    // update the UI (needs to debug. currently i am using reload())
-                    // const remainingEvents = interestedEventDetails.filter(intsEvent => interestedEventDetails._id !== id);
-                    // setInterestedEventDetails(remainingEvents);
-                }
-            })
-        }
     }
 
     return ( 
@@ -52,7 +35,7 @@ const JoinedEvent = (props) => {
                     <small className="text-muted pe-2">Event Date: {joinedEventDetails.eventDate}</small>
                 </div>
                 <div className="card-footer">
-                    {/* <Link to={`/interested/${_id}`}><button className='btn btn-outline-dark btn-sm mx-2' onClick={handledBtn}>Interested</button></Link> */}
+                    {/* <Link to={`/interested/${_id}`}><button className='btn btn-outline-dark btn-sm mx-2' onClick={handleInterestedBtn}>Interested</button></Link> */}
                     <button className='btn btn-outline-dark btn-sm mx-2' onClick={handleLeaveBtn}>Leave</button>
 
                     <Link to={`/donation/${_id}`}><button className='btn btn-outline-warning btn-sm mx-2'>Donate</button></Link>

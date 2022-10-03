@@ -20,7 +20,7 @@ const InterestedEvent = (props) => {
             setInterestedEventDetails(filteredEvents[0]);
         });
     }, [eventId])
-    // console.log(interestedEventDetails);
+    console.log(interestedEventDetails);
 
     const handleRemoveBtn = () =>{
         const proceed = window.confirm('Are you sure you want to remove this event?');
@@ -57,23 +57,6 @@ const InterestedEvent = (props) => {
                 alert('Added in Joined List!')
             }
         })
-
-        //delete from interest after joining 
-        const url = `http://localhost:3001/interestedEvents/${id}`;
-            fetch(url, {
-                method: 'DELETE'
-            })
-            .then(res => res.json())
-            .then(data => {
-                if(data.deletedCount > 0){
-                    // alert('Removed Successfully!')
-                    window.location.reload();
-
-                    // update the UI (needs to debug. currently i am using reload())
-                    // const remainingEvents = interestedEventDetails.filter(intsEvent => interestedEventDetails._id !== id);
-                    // setInterestedEventDetails(remainingEvents);
-                }
-            })
     }
 
     return (

@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
 import JoinedEvent from '../JoinedEvent/JoinedEvent';
 
@@ -7,14 +8,14 @@ const JoinedEvents = () => {
 
     const [userJoinedEvents, setUserJoinedEvents] = useState([]);
 
-    useEffect(() =>{
+    useEffect( ()=>{
         fetch('http://localhost:3001/joinedEvents')
-        .then (res => res.json())
-        .then( data => {
-            const filteredEvents = data.filter(userWiseJoinedEvents => userWiseJoinedEvents.userEmail === user.email);
+        .then(res => res.json())
+        .then(data => {
+            const filteredEvents = data.filter(userWiseJoinedEvents => userWiseJoinedEvents.userEmail === user.email)
             setUserJoinedEvents(filteredEvents);
-        })
-    } ,[user.email])
+        });
+    }, [user.email])
 
     return (
         <div>
@@ -22,12 +23,12 @@ const JoinedEvents = () => {
             <hr className='mx-auto w-50'/>
 
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3 m-3">
-                {
-                    userJoinedEvents.map(joinedEvent => <JoinedEvent
-                    key={joinedEvent._id}
-                    joinedEvent = {joinedEvent}
-                    ></JoinedEvent>)
-                }
+                {/* {
+                    userJoinedEvents.map(JoinedEvent => <JoinedEvent>
+                        key={JoinedEvent._id}
+                        JoinedEvent = {JoinedEvent}
+                    </JoinedEvent>)
+                } */}
             </div>
         </div>
     );
