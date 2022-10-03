@@ -12,13 +12,13 @@ const SingleEvent = (props) => {
         //add (POST) the event to a new cluster interested_events_DB storing user email and event id
         const userEmail = user.email;
         const eventId = _id;
-        const interestedEventData = {userEmail, eventId, eventTitle};
+        const interestedEventData = {userEmail, eventId};
 
         axios.post('http://localhost:3001/interestedEvents', interestedEventData)
         .then(res => {
             // console.log(res);
             if(res.data.insertedId){
-                alert('Added in Interest List!')
+                alert('Added Successfully!')
             }
         })
     }
@@ -27,15 +27,8 @@ const SingleEvent = (props) => {
         //add (POST) the event to a new cluster joined_events_DB storing user email and event id
         const userEmail = user.email;
         const eventId = _id;
-        const joinedEventData = {userEmail, eventId, eventTitle};
+        const joinedEventData = {userEmail, eventId};
 
-        axios.post('http://localhost:3001/joinedEvents', joinedEventData)
-        .then(res => {
-            // console.log(res);
-            if(res.data.insertedId){
-                alert('Added in Joined List!')
-            }
-        })
     }
 
     return (
