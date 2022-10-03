@@ -6,16 +6,17 @@ import InterestedEvent from '../InterestedEvent/InterestedEvent';
 const InterestedEvents = () => {
     const {user} = useAuth();
 
+    const [allInterestedEvents, setAllInterestedEvents] = useState([]);
     const [userInterestedEvents, setUserInterestedEvents] = useState([]);
 
     useEffect( ()=>{
         fetch('http://localhost:3001/interestedEvents')
         .then(res => res.json())
-        .then(data => {
-            const filteredEvents = data.filter(userWiseInterestedEvents => userWiseInterestedEvents.userEmail === user.email)
-            setUserInterestedEvents(filteredEvents);
-        });
-    }, [user.email])
+        .then(data => setAllInterestedEvents(data));
+    }, [])
+
+    const filteredEvents =  allInterestedEvents.filter(userWiseInterestedEvents => userWiseInterestedEvents.userEmail === user.email);
+    setUserInterestedEvents(filteredEvents);
 
     return (
         <div>
@@ -23,11 +24,15 @@ const InterestedEvents = () => {
             <hr className='mx-auto w-50'/>
 
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3 m-3">
-                {
-                    userInterestedEvents.map(interestedEvent => <InterestedEvent
+                {/* {
+                    interestedEvents.map(interestedEvent => <InterestedEvent
                         key={interestedEvent._id}
                         interestedEvent = {interestedEvent}
                     ></InterestedEvent>)
+                } */}
+
+                {
+                    
                 }
             </div>
         </div>

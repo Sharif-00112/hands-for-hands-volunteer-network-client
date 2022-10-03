@@ -11,7 +11,7 @@ const Dashboard = () => {
     return (
         <div>
             <h2 className='mt-3'>User Dashboard</h2>
-            <h5>Name: {user?.displayName} ; Email: {user.email}</h5>
+            <h5>Name: {user.name} ; Email: {user.email}</h5>
             <hr className='mx-auto w-25'/>
             
             <JoinedEvents></JoinedEvents>

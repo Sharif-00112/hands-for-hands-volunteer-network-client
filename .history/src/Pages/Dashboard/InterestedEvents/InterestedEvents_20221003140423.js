@@ -6,6 +6,7 @@ import InterestedEvent from '../InterestedEvent/InterestedEvent';
 const InterestedEvents = () => {
     const {user} = useAuth();
 
+    // const [allInterestedEvents, setAllInterestedEvents] = useState([]);
     const [userInterestedEvents, setUserInterestedEvents] = useState([]);
 
     useEffect( ()=>{
@@ -16,6 +17,9 @@ const InterestedEvents = () => {
             setUserInterestedEvents(filteredEvents);
         });
     }, [user.email])
+
+    // const filteredEvents =  allInterestedEvents.filter(userWiseInterestedEvents => userWiseInterestedEvents.userEmail === user.email);
+    // setUserInterestedEvents(filteredEvents);
 
     return (
         <div>

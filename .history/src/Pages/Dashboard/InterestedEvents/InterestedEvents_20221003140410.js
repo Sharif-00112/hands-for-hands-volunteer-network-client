@@ -6,16 +6,20 @@ import InterestedEvent from '../InterestedEvent/InterestedEvent';
 const InterestedEvents = () => {
     const {user} = useAuth();
 
+    // const [allInterestedEvents, setAllInterestedEvents] = useState([]);
     const [userInterestedEvents, setUserInterestedEvents] = useState([]);
 
     useEffect( ()=>{
         fetch('http://localhost:3001/interestedEvents')
         .then(res => res.json())
         .then(data => {
-            const filteredEvents = data.filter(userWiseInterestedEvents => userWiseInterestedEvents.userEmail === user.email)
-            setUserInterestedEvents(filteredEvents);
+            // const filteredEvents = data.filter(userWiseInterestedEvents => userWiseInterestedEvents.userEmail === user.email)
+            // setUserInterestedEvents(filteredEvents);
         });
     }, [user.email])
+
+    // const filteredEvents =  allInterestedEvents.filter(userWiseInterestedEvents => userWiseInterestedEvents.userEmail === user.email);
+    // setUserInterestedEvents(filteredEvents);
 
     return (
         <div>

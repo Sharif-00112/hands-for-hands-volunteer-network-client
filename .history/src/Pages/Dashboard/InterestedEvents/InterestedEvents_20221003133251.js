@@ -1,21 +1,15 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import useAuth from '../../../hooks/useAuth';
 import InterestedEvent from '../InterestedEvent/InterestedEvent';
 
 const InterestedEvents = () => {
-    const {user} = useAuth();
-
-    const [userInterestedEvents, setUserInterestedEvents] = useState([]);
+    const [interestedEvents, setInterestedEvents] = useState([]);
 
     useEffect( ()=>{
         fetch('http://localhost:3001/interestedEvents')
         .then(res => res.json())
-        .then(data => {
-            const filteredEvents = data.filter(userWiseInterestedEvents => userWiseInterestedEvents.userEmail === user.email)
-            setUserInterestedEvents(filteredEvents);
-        });
-    }, [user.email])
+        .then(data => setInterestedEvents(data));
+    }, [])
 
     return (
         <div>
@@ -24,7 +18,7 @@ const InterestedEvents = () => {
 
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3 m-3">
                 {
-                    userInterestedEvents.map(interestedEvent => <InterestedEvent
+                    interestedEvents.map(interestedEvent => <InterestedEvent
                         key={interestedEvent._id}
                         interestedEvent = {interestedEvent}
                     ></InterestedEvent>)
