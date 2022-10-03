@@ -15,18 +15,13 @@ const SingleEvent = (props) => {
         const clickTime = new Date();
         const interestedEventData = {userEmail, eventId, eventTitle, clickTime};
 
-        if(userEmail){
-            axios.post('http://localhost:3001/interestedEvents', interestedEventData)
-            .then(res => {
-                // console.log(res);
-                if(res.data.insertedId){
-                    alert('Added in Interest List!')
-                }
-            })
-        }
-        else {
-            alert('Please login first');
-        }
+        axios.post('http://localhost:3001/interestedEvents', interestedEventData)
+        .then(res => {
+            // console.log(res);
+            if(res.data.insertedId){
+                alert('Added in Interest List!')
+            }
+        })
     }
 
     const handleJoinBtn = () =>{
@@ -46,7 +41,7 @@ const SingleEvent = (props) => {
             })
         }
         else {
-            alert('Please login first');
+            alert('Please login first')
         }
 
     }
