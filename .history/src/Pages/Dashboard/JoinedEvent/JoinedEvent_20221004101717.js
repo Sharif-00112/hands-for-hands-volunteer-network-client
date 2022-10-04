@@ -23,7 +23,7 @@ const JoinedEvent = (props) => {
     const handleLeaveBtn = () => {
         const proceed = window.confirm('Are you sure you want to leave this event?');
         if(proceed){
-            const url = `https://safe-citadel-76278.herokuapp.com/joinedEvents/${id}`;
+            const url = `https://safe-citadel-76278.herokuapp.com/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
